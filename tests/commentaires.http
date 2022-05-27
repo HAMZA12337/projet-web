@@ -1,0 +1,35 @@
+
+###
+get http://localhost:3000/Commentaire
+
+###
+get http://localhost:3000/Commentaire/2
+
+###
+
+ delete http://localhost:3000/Commentaire/2 HTTP/1.1
+
+###
+
+POST http://localhost:3000/Commentaire HTTP/1.1
+content-type: application/json
+
+{
+   
+"contenu": "totototo",
+"authorId": 1,
+"articleId": 1
+}
+
+###
+
+PATCH http://localhost:3000/Commentaire HTTP/1.1
+content-type: application/json
+
+{
+    "id":1,
+    "contenu": "totototo",
+     "authorId": 1,
+     "articleId": 1
+}
+

@@ -23,8 +23,8 @@ model Utilisateur {
 
 model Categorie {
   id      Int       @id @default(autoincrement())
-  label   String?
-  article Article[] @relation("id")
+  label   String  @unique
+  articles Article[]
 
 }
 
@@ -35,17 +35,18 @@ model Article {
   published Boolean  @default(false)
   titre     String   @db.VarChar(255)
 
-  author   Utilisateur? @relation(fields: [authorId], references: [id])
-  authorId Int?
+  author   Utilisateur  @relation(fields: [authorId], references: [id])
+  authorId Int
 
-  categorie Categorie[] @relation("id")
+  
 
-  commmentaires  Commentaire @relation(fields: [commmentaireId], references: [id])
-  commmentaireId Int         @unique
-
+  
+commentaire Commentaire ?
+  categories  Categorie  @relation(fields: [categorieId], references: [id])
+  categorieId Int 
 
 }
-
+ 
 model Commentaire {
   id      Int    @id @default(autoincrement())
   contenu String
@@ -53,7 +54,8 @@ model Commentaire {
   author   Utilisateur? @relation(fields: [authorId], references: [id])
   authorId Int?
 
-  Article Article?
+  articles  Article @relation(fields: [articleId], references: [id])
+  articleId Int         @unique
 }
 
 enum Role {

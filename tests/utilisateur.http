@@ -8,4 +8,28 @@ get http://localhost:3000/users/2
 
 ###
 
-delete http://localhost:3000/users/5
+ delete http://localhost:3000/users/5 HTTP/1.1
+
+###
+
+POST http://localhost:3000/users HTTP/1.1
+content-type: application/json
+
+{
+    "email":"fatihaaA@gmmail.com",
+    "nom": "sKAHDImmmmHA",
+    "password": "112233"
+}
+
+###
+PATCH http://localhost:3000/users HTTP/1.1
+content-type: application/json
+Authorization: Bearer
+
+{
+    "id":1,
+    "nom":"nfnffnfnfn",
+    "password":"nfnf"
+}
+
+###

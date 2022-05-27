@@ -1,1 +1,36 @@
-get http://localhost:3000/users
+
+###
+get http://localhost:3000/articles
+
+###
+get http://localhost:3000/articles/2
+
+###
+
+ delete http://localhost:3000/articles/2 HTTP/1.1
+
+###
+
+POST http://localhost:3000/articles HTTP/1.1
+content-type: application/json
+
+{
+    "published":false ,
+    "titre": "les ammenades",
+    "authorId": 1,
+    "categorieId":3
+}
+
+###
+
+PATCH http://localhost:3000/articles HTTP/1.1
+content-type: application/json
+
+{
+    "id":1,
+    "published":false ,
+    "titre": "les kaenades",
+    "authorId": 1,
+    "categorieId":3
+}
+
