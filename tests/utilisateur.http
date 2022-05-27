@@ -1,0 +1,11 @@
+
+
+###
+get http://localhost:3000/users
+
+###
+get http://localhost:3000/users/2
+
+###
+
+delete http://localhost:3000/users/5
