@@ -1,9 +1,20 @@
+// const { apply} =require ("./routes/seeds/seed");
 var express = require("express");
 // pour manipuler des chemins
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var bodyParser = require('body-parser')
+
+
+
+
+
+
+
+
+
+
 
  var usersRouter = require("./routes/utilisateur");
 var categoriesRouter = require("./routes/categories");

@@ -18,7 +18,8 @@ content-type: application/json
     "published":false ,
     "titre": "les ammenades",
     "authorId": 1,
-    "categorieId":3
+    "categorieId":3,
+    "contenu":"Cdnjfvnn"
 }
 
 ###
@@ -31,6 +32,7 @@ content-type: application/json
     "published":false ,
     "titre": "les kaenades",
     "authorId": 1,
-    "categorieId":3
+    "categorieId":3,
+    "contenu":"Cdnjfvnn"
 }
 

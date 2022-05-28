@@ -65,3 +65,6 @@ ALTER TABLE `_id` ADD CONSTRAINT `_id_A_fkey` FOREIGN KEY (`A`) REFERENCES `Arti
 
 -- AddForeignKey
 ALTER TABLE `_id` ADD CONSTRAINT `_id_B_fkey` FOREIGN KEY (`B`) REFERENCES `Categorie`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+
+Alter table Utilisateur AUTO_INCREMENT=1

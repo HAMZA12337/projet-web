@@ -32,17 +32,18 @@ model Article {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  contenu String 
   published Boolean  @default(false)
   titre     String   @db.VarChar(255)
 
-  author   Utilisateur  @relation(fields: [authorId], references: [id])
+  author   Utilisateur  @relation(fields: [authorId], references: [id],onUpdate: Cascade, onDelete: Cascade)
   authorId Int
 
   
 
   
 commentaire Commentaire ?
-  categories  Categorie  @relation(fields: [categorieId], references: [id])
+  categories  Categorie  @relation(fields: [categorieId], references: [id],onUpdate: Cascade, onDelete: Cascade)
   categorieId Int 
 
 }
@@ -51,10 +52,10 @@ model Commentaire {
   id      Int    @id @default(autoincrement())
   contenu String
 
-  author   Utilisateur? @relation(fields: [authorId], references: [id])
+  author   Utilisateur? @relation(fields: [authorId], references: [id],onUpdate: Cascade, onDelete: Cascade)
   authorId Int?
 
-  articles  Article @relation(fields: [articleId], references: [id])
+  articles  Article @relation(fields: [articleId], references: [id],onUpdate: Cascade, onDelete: Cascade)
   articleId Int         @unique
 }
 

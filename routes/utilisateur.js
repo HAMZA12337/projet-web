@@ -12,7 +12,7 @@ router.get('/',async (req,res)=>{
 
   var {skip,take}=req.query
   
-  skip=skip || 4
+  skip=skip || 0
   take =take || 6
    const users = await prisma.Utilisateur.findMany();
   

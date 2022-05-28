@@ -60,9 +60,6 @@ router.post("/", async function (req, res) {
 
 
 
-
-   
-
     const addArticle = await prisma.Article.create({
       data: req.body
     });
