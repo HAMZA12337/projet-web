@@ -42,7 +42,7 @@ model Article {
   
 
   
-commentaire Commentaire ?
+commentaire Commentaire []
   categories  Categorie  @relation(fields: [categorieId], references: [id],onUpdate: Cascade, onDelete: Cascade)
   categorieId Int 
 
@@ -52,11 +52,11 @@ model Commentaire {
   id      Int    @id @default(autoincrement())
   contenu String
 
-  author   Utilisateur? @relation(fields: [authorId], references: [id],onUpdate: Cascade, onDelete: Cascade)
-  authorId Int?
+  author   Utilisateur @relation(fields: [authorId], references: [id],onUpdate: Cascade, onDelete: Cascade)
+  authorId Int 
 
   articles  Article @relation(fields: [articleId], references: [id],onUpdate: Cascade, onDelete: Cascade)
-  articleId Int         @unique
+  articleId Int         
 }
 
 enum Role {

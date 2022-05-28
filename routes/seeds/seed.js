@@ -45,12 +45,12 @@ const fakerarticles= ()=> ({
 
  async  function apply() {
 try{
-  const deleteUsers = await prisma.Categorie.deleteMany({})
+  // const deleteUsers = await prisma.Categorie.deleteMany({})
   
-  const deleteCategories= await prisma.Utilisateur .deleteMany({});
+  // const deleteCategories= await prisma.Utilisateur .deleteMany({});
   
-  const deleteArticles = await prisma.Article.deleteMany({})
-  const deleteComments = await prisma.Commentaire.deleteMany({})
+  // const deleteArticles = await prisma.Article.deleteMany({})
+  // const deleteComments = await prisma.Commentaire.deleteMany({})
 }catch(e){
   console.log(e)
 }
@@ -58,7 +58,7 @@ try{
 
 
 
-//   //------------------------ numbers====================
+// //   //------------------------ numbers====================
   const fakerRounds_user = 10;
   const fakerRounds_comments=10;
   const fakerRounds_articles=100;
@@ -66,39 +66,39 @@ try{
   
 
   console.log('Seeding...');
-  /// --------- 10 Users Author ---------------
+  // --------- 10 Users Author ---------------
   for (let i = 0; i < fakerRounds_user; i++) {
   await prisma.Utilisateur.create({ data: fakerUser() });
   }
-  //------------1 USER ADMIN-------------
+// //   //------------1 USER ADMIN-------------
   await prisma.Utilisateur.create({ data: fakerUser_ad() });
-//-------------- Categories-----------------------
+// //-------------- Categories-----------------------
   for (let i = 0; i < fakerRounds_comments; i++) {
     await prisma.Categorie.create({ data: fakerCategories() });
     }
-//--------------Articles--------------
-// for (let i = 0; i < fakerRounds_articles; i++) {
-//     await prisma.Article.create({ data: fakerarticles() });
-//     }
+// //--------------Articles--------------
+for (let i = 0; i < fakerRounds_articles; i++) {
+    await prisma.Article.create({ data: fakerarticles() });
+    }
 
 
-// //--------------- Comments
-// const fakerComments='';
+// // //--------------- Comments------------------------------
 
-// for (let i = 0; i < fakerRounds_articles; i++) {
-//    fakerComments= ({
-//     contenu: faker.name.title(),
-//     authorId:faker.random.number(1, 10) ,
-//     articleId:i
+
+for (let i = 1; i < fakerRounds_articles; i++) {
+  const fakerComments= ()=>({
+    contenu: faker.lorem.text(),
+    authorId:parseInt(faker.random.numeric(1, 10)),
+    articleId:i
  
-//  });
-//   for (let j = 0; j < fakerRounds_Comments; i++) {
+ });
+  for (let j = 0; j < fakerRounds_Comments; j++) {
   
-//   await prisma.Commentaire.create({ data: fakerarticles() });
-//   }
+  await prisma.Commentaire.create({ data: fakerComments() });
+  }
 
 
-// }
+}
 
 
 };

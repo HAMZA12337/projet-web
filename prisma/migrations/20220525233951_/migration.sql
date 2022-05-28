@@ -29,7 +29,7 @@ CREATE TABLE `Article` (
     `authorId` INTEGER NULL,
     `commmentaireId` INTEGER NOT NULL,
 
-    UNIQUE INDEX `Article_commmentaireId_key`(`commmentaireId`),
+    
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
