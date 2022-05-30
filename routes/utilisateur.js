@@ -84,24 +84,36 @@ router.post("/", async function (req, res) {
 
 
 
-// j'ai encore le temps je via simplementer cette methode 
+// si j'ai encore le temps je via simplementer cette methode 
 
-// router.post("/login", async function (req, res) => {
+router.post("/login",  async (req, res) => {
 
-// //   const body = req.body;
-// //   const user = await User.findOne({ email: body.email });
-// //   if (user) {
-// //     // check user password with hashed password stored in the database
-// //     const validPassword = await bcrypt.compare(body.password, user.password);
-// //     if (validPassword) {
-// //       res.status(200).json({ message: "Valid password" });
-// //     } else {
-// //       res.status(400).json({ error: "Invalid Password" });
-// //     }
-// //   } else {
-// //     res.status(401).json({ error: "User does not exist" });
-// //   }
-// // });
+  const body = req.body;
+  const user = await prisma.Utilisateur.findUnique({
+    where: {
+      email: req.body.email,
+      
+    },
+  })
+
+ 
+  if (user) {
+  //   // check user password with hashed password stored in the database
+    const validPassword = await bcrypt.compare(body.password, user.password);
+    if (validPassword) {
+      res.status(200).json({ error: "Valid password" });
+    } else {
+      res.status(400).json({ error: "Invalid Password" });
+    }
+  } else {
+    res.status(401).json({ error: "User does not exist" });
+   }
+
+  
+
+console.log('hello')
+
+});
 
 
 // update a user
@@ -119,7 +131,7 @@ router.patch("/", async function (req, res, next) {
     }
   })
   res.send(updateUser)
-})
+});
 
 // get limit list of users 
 

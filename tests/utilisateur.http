@@ -16,11 +16,22 @@ POST http://localhost:3000/users HTTP/1.1
 content-type: application/json
 
 {
-    "email":"fatihaaA@gmmail.com",
-    "nom": "sKAHDImmmmHA",
-    "password": "112233"
+    "email":"hamza.braimi33@gmail.com",
+    "nom": "HAMZA",
+    "password": "12345678"
 }
 
+###
+
+POST http://localhost:3000/users/login HTTP/1.1
+content-type: application/json
+Authorization: Bearer
+
+{
+    
+    "email":"hamza.braimi33@gmail.com",
+    "password":"12345678"
+}
 ###
 PATCH http://localhost:3000/users HTTP/1.1
 content-type: application/json
@@ -33,3 +44,7 @@ Authorization: Bearer
 }
 
 ###
+
+
+
+

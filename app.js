@@ -5,8 +5,7 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var bodyParser = require('body-parser')
-
-
+var cors = require('cors')
 
 
 
@@ -32,10 +31,20 @@ app.use(bodyParser.urlencoded({
   }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
-
+app.use(cors());
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type", 
+ " Accept, x-client-key", "x-client-token", "x-client-secret", "Authorization");
+    next();
+ 
+});
 app.use("/users", usersRouter);
 app.use("/categories", categoriesRouter);
 app.use("/articles", articlesRouter);
 app.use("/Commentaire", commentairesRouter)
+
+
 
 module.exports = app;

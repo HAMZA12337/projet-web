@@ -4,9 +4,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="icon" href="src/assets/img/favicon.ico">
+<title>Mediumish - A Medium style template by WowThemes.net</title>
+<!-- Bootstrap core CSS -->
+<link href="src/assets/css/bootstrap.min.css" rel="stylesheet">
+<!-- Fonts -->
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="src/assets/css/mediumish.css" rel="stylesheet">
+<link href="style/style.css" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
-    Hello guys
+    <div id="AppContainer"> </div>
+
+<script type="text/javascript" charset="utf-8">
+
+var HashChange=function(){
+var hash=window.location.hash;
+if(hash.startsWith("#/") && hash.length>2){
+    hash=hash.replace('#/','');
+    var file="src/"+hash+".html";
+    $('#AppContainer').load(file);
+}else{
+window.location="#/home"
+
+}
+
+
+}
+
+window.onhashchange=HashChange
+
+HashChange()
+</script>
+
+
+<!-- Bootstrap core JavaScript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="src/assets/js/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="src/assets/js/bootstrap.min.js"></script>
+<script src="src/assets/js/ie10-viewport-bug-workaround.js"></script>
 </body>
 </html>
