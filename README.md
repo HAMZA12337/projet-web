@@ -1,15 +1,15 @@
 
-==> My idea of project 
+==> The idea of project 
 
 This project is a web blog whose Backend and Frontend parts will be developed and tested separately. The backend will work as a JSON API. Here are the technologies that will be adopted for this project :
 
    ==> On the backend side:
-       the NodeJS Express framework for the web server
-       the ORM Prisma and a Mysql/MariaDB database for data persistence
+       The NodeJS Express framework for the web server
+       The ORM Prisma and a Mysql/MariaDB database for data persistence
 
   ==> On the frontend side:
       HTML/CSS/Javascript using JQuery Javascript 
-      library and CSS Bootstrap framework
+      Library and CSS Bootstrap framework
 
 
 # Node.js Express Login and Registration example with JWT
