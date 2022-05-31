@@ -6,6 +6,8 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var bodyParser = require('body-parser')
 var cors = require('cors')
+const cookieSession = require("cookie-session");
+
 
 
 
@@ -23,6 +25,15 @@ var commentairesRouter = require("./routes/commentaires");
 
 
 var app = express();
+app.use(
+  cookieSession({
+    name: "hamza-session",
+    secret: "COOKIE_SECRET", // should use as secret environment variable
+    httpOnly: true,
+    sameSite: 'strict'
+  })
+);
+
 console.log("hello man")
 app.use(logger("dev"));
 app.use(express.json());
