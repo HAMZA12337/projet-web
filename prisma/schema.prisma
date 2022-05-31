@@ -15,6 +15,7 @@ model Utilisateur {
   createdAt    DateTime      @default(now())
   email        String        @unique
   nom          String?
+  description String?
   password     String?
   role         Role          @default(AUTHOR)
   articles     Article[]
@@ -35,7 +36,7 @@ model Article {
   contenu String 
   published Boolean  @default(false)
   titre     String   @db.VarChar(255)
-
+  image String
   author   Utilisateur  @relation(fields: [authorId], references: [id],onUpdate: Cascade, onDelete: Cascade)
   authorId Int
 

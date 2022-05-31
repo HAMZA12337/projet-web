@@ -27,7 +27,7 @@ CREATE TABLE `Article` (
     `published` BOOLEAN NOT NULL DEFAULT false,
     `titre` VARCHAR(255) NOT NULL,
     `authorId` INTEGER NULL,
-    `commmentaireId` INTEGER NOT NULL,
+   
 
     
     PRIMARY KEY (`id`)
@@ -38,7 +38,7 @@ CREATE TABLE `Commentaire` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `contenu` VARCHAR(191) NOT NULL,
     `authorId` INTEGER NULL,
-
+    `` INTEGER NULL,
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
@@ -67,4 +67,8 @@ ALTER TABLE `_id` ADD CONSTRAINT `_id_A_fkey` FOREIGN KEY (`A`) REFERENCES `Arti
 ALTER TABLE `_id` ADD CONSTRAINT `_id_B_fkey` FOREIGN KEY (`B`) REFERENCES `Categorie`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 
-Alter table Utilisateur AUTO_INCREMENT=1
+Alter table Utilisateur AUTO_INCREMENT=1 ;
+Alter table  article AUTO_INCREMENT=1 ;
+Alter table commentaire AUTO_INCREMENT=1 ;
+Alter table Categorie AUTO_INCREMENT=1 ;
+ALTER TABLE `blog`.`commentaire` DROP INDEX `Commentaire_articleId_key`, ADD INDEX `Commentaire_articleId_key` (`articleId`) USING BTREE;

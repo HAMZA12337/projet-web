@@ -9,6 +9,7 @@ const fakerUser = ()=> ({
    email: faker.internet.email(),
    nom: faker.name.firstName() + faker.name.lastName(),
    password: faker.internet.password(),
+   description:faker.lorem.sentence()
   });
 
   //----------------------faker admin user
@@ -16,7 +17,8 @@ const fakerUser = ()=> ({
     email: faker.internet.email(),
     nom: faker.name.firstName() + faker.name.lastName(),
     password: faker.internet.password(),
-    role:"ADMIN"
+    role:"ADMIN",
+    description:faker.lorem.sentence()
    });
 
 /// facker categories
@@ -34,7 +36,8 @@ const fakerarticles= ()=> ({
     titre: faker.random.words(),
     authorId: parseInt(faker.random.numeric(1, 4)),
     categorieId:parseInt(faker.random.numeric(1, 10)),
-    contenu:faker.lorem.text()
+    contenu:faker.lorem.text(),
+    image:faker.image.abstract()
  });
  
 //-------- FAKER COMMENTS 
@@ -70,13 +73,13 @@ try{
   for (let i = 0; i < fakerRounds_user; i++) {
   await prisma.Utilisateur.create({ data: fakerUser() });
   }
-// //   //------------1 USER ADMIN-------------
+// // //   //------------1 USER ADMIN-------------
   await prisma.Utilisateur.create({ data: fakerUser_ad() });
-// //-------------- Categories-----------------------
+// // //-------------- Categories-----------------------
   for (let i = 0; i < fakerRounds_comments; i++) {
     await prisma.Categorie.create({ data: fakerCategories() });
     }
-// //--------------Articles--------------
+// // //--------------Articles--------------
 for (let i = 0; i < fakerRounds_articles; i++) {
     await prisma.Article.create({ data: fakerarticles() });
     }

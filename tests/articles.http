@@ -19,7 +19,9 @@ content-type: application/json
     "titre": "les ammenades",
     "authorId": 1,
     "categorieId":3,
-    "contenu":"Cdnjfvnn"
+    "contenu":"Cdnjfvnn",
+    "image":"nfk"
+  
 }
 
 ###
