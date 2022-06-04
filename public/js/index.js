@@ -9,14 +9,15 @@ var start=0;
 
 // pour panel author
 
+function get_Author(k){
+alert('jkinjnlk')
 
+}
 $( "#Article" ).load( "#AppContainer",get_Articles(start,fin));
 
 
 async function get_Articles(start,fin){
-  function   myFunction(){
-        alert('kkk')
-    }
+    localStorage.setItem('monChat', 'Tom');
  let resultat =await   $.ajax({
         // async: true,
         type: "GET",
@@ -47,7 +48,7 @@ response.forEach(element => {
                        ' 	<div class="metafooter">'+
                        ' 	<div class="wrapfooter">'+
                        ' 		<span class="meta-footer-thumb">'+
-                       ' 	<a href=""><img class="author-thumb" onclick="get_Author('+element.authorId+')" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal">'+
+                       ' 	<img class="author-thumb" onclick="alert("vfvgv");" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal">'+
                        ' 		</span>'+
                        ' 		<span class="author-meta">'+
                        ' 		<span class="post-name"><a href="#/author">Steve</a></span><br/>'+

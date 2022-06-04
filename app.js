@@ -1,18 +1,13 @@
-// const { apply} =require ("./routes/seeds/seed");
+
 var express = require("express");
 // pour manipuler des chemins
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
+
 var bodyParser = require('body-parser')
 var cors = require('cors')
 const cookieSession = require("cookie-session");
-
-
-
-
-
-
 
 
 
@@ -25,12 +20,18 @@ var commentairesRouter = require("./routes/commentaires");
 
 
 var app = express();
+
+// Vous pouvez utiliser JWT
+// A user session can be stored in two main ways with cookies: on the server or on the client.
+//  This module stores the session data on the client within a cookie, while a module like express-session
+//   stores only a session identifier on the client within a cookie and stores the session data on the server,
+//  typically in a database.
 app.use(
   cookieSession({
     name: "hamza-session",
     secret: "COOKIE_SECRET", // should use as secret environment variable
-    httpOnly: true,
-    sameSite: 'strict'
+    httpOnly: true
+    
   })
 );
 
